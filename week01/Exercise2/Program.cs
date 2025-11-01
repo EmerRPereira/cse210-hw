@@ -1,3 +1,7 @@
+// CSE210 - Programming with Classes
+// C# Programming Exercise 2: If Statements
+// Author: Emerson Ronald Pereira
+
 using System;
 
 class Program
