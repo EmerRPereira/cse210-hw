@@ -1,3 +1,7 @@
+// CSE210 - Programming with Classes
+// C# Programming Exercise 1: Input and Output
+// Author: Emerson Ronald Pereira
+
 using System;
 
 class Program
