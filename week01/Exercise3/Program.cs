@@ -1,3 +1,7 @@
+// CSE210 - Programming with Classes
+// C# Programming Exercise 3: Loops
+// Author: Emerson Ronald Pereira
+
 using System;
 
 class Program
