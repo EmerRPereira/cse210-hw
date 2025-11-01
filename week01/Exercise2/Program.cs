@@ -15,7 +15,7 @@ class Program
         string letter = "";
         string sign = "";
 
-        // Determina a letra principal
+        // Determines the main letter about your grade percentage
         if (grade >= 90)
         {
             letter = "A";
@@ -37,7 +37,7 @@ class Program
             letter = "F";
         }
 
-        // Determina o sinal (+ ou -)
+        // Determine the sign (+ ou -)
         int lastDigit = grade % 10;
 
         if (lastDigit >= 7)
@@ -53,7 +53,7 @@ class Program
             sign = "";
         }
 
-        // Ajustes especiais (A+, F+, F- não existem)
+        // Special adjustments (A+, F+, F- do not exist)
         if (letter == "A" && sign == "+")
         {
             sign = "";
