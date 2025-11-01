@@ -1,3 +1,7 @@
+// CSE210 - Programming with Classes
+// C# Programming Exercise 4: Lists and Generics
+// Author: Emerson Ronald Pereira
+
 using System;
 using System.Collections.Generic;
 
