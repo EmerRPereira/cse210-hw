@@ -1,3 +1,7 @@
+// CSE210 - Programming with Classes
+// C# Programming Exercise 5: Functions
+// Author: Emerson Ronald Pereira
+
 using System;
 
 class Program
