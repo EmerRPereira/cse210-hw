@@ -24,13 +24,13 @@ class Program
         DisplayResult(userName, squaredNumber);
     }
 
-    // Função 1: Displays a welcome message
+    // Function 1: Displays a welcome message
     static void DisplayWelcome()
     {
         Console.WriteLine("Welcome to the program!");
     }
 
-    // Função 2: It asks for the username and returns it as string
+    // Function 2: It asks for the username and returns it as string
     static string PromptUserName()
     {
         Console.Write("Please enter your name: ");
@@ -38,7 +38,7 @@ class Program
         return name;
     }
 
-    // Função 3: It asks for the favorite number and returns it as int
+    // Function 3: It asks for the favorite number and returns it as int
     static int PromptUserNumber()
     {
         Console.Write("Please enter your favorite number: ");
@@ -46,14 +46,14 @@ class Program
         return number;
     }
 
-    // Função 4: It takes a number and returns its square
+    // Function 4: It takes a number and returns its square
     static int SquareNumber(int number)
     {
         int square = number * number;
         return square;
     }
 
-    // Função 5: It receives the name and the squared number and displays the result
+    // Function 5: It receives the name and the squared number and displays the result
     static void DisplayResult(string name, int square)
     {
         Console.WriteLine($"{name}, the square of your number is {square}");
