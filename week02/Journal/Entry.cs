@@ -13,7 +13,7 @@ public class Entry
         Response = response;
     }
 
-0    // Constructor used when loading from file
+    // Constructor used when loading from file
     public Entry(string date, string prompt, string response, bool fromFile)
     {
         Date = date;
