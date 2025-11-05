@@ -1,3 +1,18 @@
+/*
+======================================================
+Course: CSE210
+Journal Program - Week 02 Project
+Author: Emerson Ronald Pereira
+Date: November 2025
+
+EXCEEDING REQUIREMENTS:
+- Saved as CSV with custom separator (|) for easy Excel compatibility
+- Includes time (HH:mm:ss) with date
+- Error handling for file operations
+- Added additional prompts for variety
+======================================================
+*/
+
 using System;
 using System.Collections.Generic;
 
@@ -79,16 +94,3 @@ class Program
     }
 }
 
-/*
-======================================================
-Journal Program - Week 02 Project
-Author: Emerson Ronald Pereira
-Date: November 2025
-
-EXCEEDING REQUIREMENTS:
-- Saved as CSV with custom separator (|) for easy Excel compatibility
-- Includes time (HH:mm:ss) with date
-- Error handling for file operations
-- Added additional prompts for variety
-======================================================
-*/

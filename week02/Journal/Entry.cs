@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+======================================================
+Course: CSE210
+Journal Program - Week 02 Project
+Author: Emerson Ronald Pereira
+Date: November 2025
+======================================================
+*/
+
+using System;
 
 public class Entry
 {
