@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 public class Scripture
 {
-    // Atributos privados
     private Reference _reference;
     private List<Word> _words = new List<Word>();
+    private Random _random = new Random();
 
-    // Construtor
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
@@ -20,10 +19,31 @@ public class Scripture
         }
     }
 
-    // Oculta palavras aleatórias
+    // Oculta palavras aleatórias (sem repetir)
     public void HideRandomWords(int numberToHide)
     {
-        // Lógica será implementada depois
+        List<int> availableIndexes = new List<int>();
+
+        // Cria lista com índices de palavras ainda visíveis
+        for (int i = 0; i < _words.Count; i++)
+        {
+            if (!_words[i].IsHidden())
+            {
+                availableIndexes.Add(i);
+            }
+        }
+
+        // Define o número máximo de palavras que podem ser ocultadas
+        int wordsToHide = Math.Min(numberToHide, availableIndexes.Count);
+
+        for (int i = 0; i < wordsToHide; i++)
+        {
+            int randomIndex = _random.Next(availableIndexes.Count);
+            int wordIndex = availableIndexes[randomIndex];
+
+            _words[wordIndex].Hide();
+            availableIndexes.RemoveAt(randomIndex);
+        }
     }
 
     // Retorna o texto completo com palavras ocultas
