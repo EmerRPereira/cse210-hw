@@ -1,3 +1,15 @@
+/*
+Course: CSE210
+W03 Project: Scripture Memorizer Program
+Author: Emerson Ronald Pereira
+Date: November 2025
+EXCEED REQUIREMENTS (CREATIVITY):
+    * 1. Scriptures are loaded dynamically from an external file (scriptures.txt).
+    * 2. A random scripture is selected each time the program runs.
+    * 3. Words are hidden only once (stretch requirement).
+    * 4. The user can practice multiple scriptures without editing code.
+*/
+
 using System;
 using System.Collections.Generic;
 
@@ -5,14 +17,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*
-         * EXCEED REQUIREMENTS (CREATIVITY):
-         * 1. Scriptures are loaded dynamically from an external file (scriptures.txt).
-         * 2. A random scripture is selected each time the program runs.
-         * 3. Words are hidden only once (stretch requirement).
-         * 4. The user can practice multiple scriptures without editing code.
-         */
-
+        
         List<Scripture> scriptures = ScriptureLoader.LoadFromFile("scriptures.txt");
 
         if (scriptures.Count == 0)
