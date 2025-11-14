@@ -1,20 +1,28 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Stretch Challenge:
-        // The program hides only words that are not already hidden,
-        // preventing repetition and improving usability.
+        /*
+         * EXCEED REQUIREMENTS (CREATIVITY):
+         * 1. Scriptures are loaded dynamically from an external file (scriptures.txt).
+         * 2. A random scripture is selected each time the program runs.
+         * 3. Words are hidden only once (stretch requirement).
+         * 4. The user can practice multiple scriptures without editing code.
+         */
 
-        Reference reference = new Reference("Proverbs", 3, 5, 6);
+        List<Scripture> scriptures = ScriptureLoader.LoadFromFile("scriptures.txt");
 
-        Scripture scripture = new Scripture(
-            reference,
-            "Trust in the Lord with all thine heart and lean not unto thine own understanding. " +
-            "In all thy ways acknowledge him, and he shall direct thy paths."
-        );
+        if (scriptures.Count == 0)
+        {
+            Console.WriteLine("No scriptures loaded. Program terminated.");
+            return;
+        }
+
+        Random random = new Random();
+        Scripture scripture = scriptures[random.Next(scriptures.Count)];
 
         while (true)
         {
@@ -30,7 +38,6 @@ class Program
                 break;
             }
 
-            // Oculta 3 palavras por vez
             scripture.HideRandomWords(3);
 
             if (scripture.IsCompletelyHidden())

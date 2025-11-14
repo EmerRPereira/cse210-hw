@@ -28,7 +28,6 @@ public class Word
 
     public string GetDisplayText()
     {
-        // Número de underscores deve corresponder ao número de letras
         return _isHidden ? new string('_', _text.Length) : _text;
     }
 }

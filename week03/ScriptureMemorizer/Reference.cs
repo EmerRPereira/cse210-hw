@@ -7,16 +7,14 @@ public class Reference
     private int _verse;
     private int _endVerse;
 
-    // Construtor para um único versículo
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
         _verse = verse;
-        _endVerse = 0; // Necessário para indicar ausência de intervalo
+        _endVerse = 0;
     }
 
-    // Construtor para intervalo de versículos
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
         _book = book;

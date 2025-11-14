@@ -11,7 +11,6 @@ public class Scripture
     {
         _reference = reference;
 
-        // Divide o texto corretamente, sem entradas vazias
         string[] parts = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
         foreach (string part in parts)
@@ -24,7 +23,6 @@ public class Scripture
     {
         List<int> availableIndexes = new List<int>();
 
-        // Lista apenas palavras visíveis
         for (int i = 0; i < _words.Count; i++)
         {
             if (!_words[i].IsHidden())
@@ -33,7 +31,6 @@ public class Scripture
             }
         }
 
-        // Não tentar ocultar mais do que o disponível
         int wordsToHide = Math.Min(numberToHide, availableIndexes.Count);
 
         for (int i = 0; i < wordsToHide; i++)
