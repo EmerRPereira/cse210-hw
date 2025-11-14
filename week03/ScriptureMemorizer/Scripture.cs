@@ -11,20 +11,20 @@ public class Scripture
     {
         _reference = reference;
 
-        // Divide o texto em palavras e cria objetos Word
-        string[] parts = text.Split(' ');
+        // Divide o texto corretamente, sem entradas vazias
+        string[] parts = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
         foreach (string part in parts)
         {
             _words.Add(new Word(part));
         }
     }
 
-    // Oculta palavras aleatórias (sem repetir)
     public void HideRandomWords(int numberToHide)
     {
         List<int> availableIndexes = new List<int>();
 
-        // Cria lista com índices de palavras ainda visíveis
+        // Lista apenas palavras visíveis
         for (int i = 0; i < _words.Count; i++)
         {
             if (!_words[i].IsHidden())
@@ -33,20 +33,19 @@ public class Scripture
             }
         }
 
-        // Define o número máximo de palavras que podem ser ocultadas
+        // Não tentar ocultar mais do que o disponível
         int wordsToHide = Math.Min(numberToHide, availableIndexes.Count);
 
         for (int i = 0; i < wordsToHide; i++)
         {
             int randomIndex = _random.Next(availableIndexes.Count);
-            int wordIndex = availableIndexes[randomIndex];
+            int index = availableIndexes[randomIndex];
 
-            _words[wordIndex].Hide();
+            _words[index].Hide();
             availableIndexes.RemoveAt(randomIndex);
         }
     }
 
-    // Retorna o texto completo com palavras ocultas
     public string GetDisplayText()
     {
         string scriptureText = "";
@@ -59,7 +58,6 @@ public class Scripture
         return $"{_reference.GetDisplayText()} - {scriptureText.Trim()}";
     }
 
-    // Verifica se todas as palavras estão ocultas
     public bool IsCompletelyHidden()
     {
         foreach (Word word in _words)
@@ -69,6 +67,7 @@ public class Scripture
                 return false;
             }
         }
+
         return true;
     }
 }

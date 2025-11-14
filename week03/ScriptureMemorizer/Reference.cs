@@ -2,7 +2,6 @@ using System;
 
 public class Reference
 {
-    // Atributos privados
     private string _book;
     private int _chapter;
     private int _verse;
@@ -14,9 +13,10 @@ public class Reference
         _book = book;
         _chapter = chapter;
         _verse = verse;
+        _endVerse = 0; // Necessário para indicar ausência de intervalo
     }
 
-    // Construtor para um intervalo de versículos
+    // Construtor para intervalo de versículos
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
         _book = book;
@@ -25,17 +25,10 @@ public class Reference
         _endVerse = endVerse;
     }
 
-    // Método que retorna o texto da referência
     public string GetDisplayText()
     {
-        // Exemplo de saída: "Proverbs 3:5" ou "Proverbs 3:5–6"
-        if (_endVerse > 0)
-        {
-            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
-        }
-        else
-        {
-            return $"{_book} {_chapter}:{_verse}";
-        }
+        return _endVerse > 0
+            ? $"{_book} {_chapter}:{_verse}-{_endVerse}"
+            : $"{_book} {_chapter}:{_verse}";
     }
 }
