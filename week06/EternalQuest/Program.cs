@@ -1,6 +1,23 @@
-//W06 Project: Eternal Quest Program
-//CSE210 - Eternal Quest
-//Author: Emerson Ronald Pereira (06/122025)
+/*
+
+W06 Project: Eternal Quest Program
+CSE210 - Eternal Quest
+Author: Emerson Ronald Pereira (06/dec/2025)
+
+* Saving/Loading Format: I chose an initial line with the score and subsequent lines with Type: fields separated by '|'. I used a simple escape for | (&#124;) so that names/descriptions can contain vertical bars. This follows the recommendation of the GetStringRepresentation() and Create… statement when reloading.
+* Encapsulation: Member variables are private or protected as needed; methods are public and abstract for polymorphism.
+* Polymorphism: RecordEvent, IsComplete, GetDetailsString, GetStringRepresentation are abstract in Goal and overridden.
+* Checklist Behavior: Gives points for each record and adds the bonus when the goal is reached for the first time.
+* User Interface: Simple menu in the console with goal creation, listing, saving/retrieving, and event logging.
+* Robustness: Simple format and parse checks; error messages if the file is invalid.
+
+Where I added creativity (to exceed requirements)
+* More informative messages in the console (e.g., displays points earned when registering an event).
+* Escaping | in strings to allow descriptions with this character.
+* GetDetailsString() shows detailed information (e.g., progress in a checklist, objective description).
+* It is easy to extend to levels, medals, penalties, etc. I commented on where to implement this in Program.cs.
+
+*/
 
 using System;
 
